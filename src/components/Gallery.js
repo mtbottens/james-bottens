@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Lightbox from 'react-images';
+import Img from 'gatsby-image';
 
 class Gallery extends Component {
     constructor () {
@@ -64,7 +65,7 @@ class Gallery extends Component {
                         href={obj.src}
                         onClick={(e) => this.openLightbox(i, e)}
                     >
-                        <img src={obj.thumbnail} />
+                        <Img sizes={obj.thumbnailSizes} />
                     </a>
 
                     <h3>{obj.caption}</h3>
@@ -80,12 +81,15 @@ class Gallery extends Component {
         );
     }
     render () {
+        const images = this.props.images.map(image => ({
+            src: image.sizes.originalImg
+        }));
         return (
             <div>
                 {this.renderGallery()}
                 <Lightbox
                     currentImage={this.state.currentImage}
-                    images={this.props.images}
+                    images={images}
                     isOpen={this.state.lightboxIsOpen}
                     onClickImage={this.handleClickImage}
                     onClickNext={this.gotoNext}
