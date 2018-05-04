@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Starter - Strata by HTML5 UP",
-    author: "Hunter Chang",
-    description: "A Gatsby.js Starter based on Strata by HTML5 UP"
+    title: "James Bottens",
+    author: "Michael Bottens",
+    description: "Remembering James Bottens with fun photos."
   },
   pathPrefix: '/',
   plugins: [
