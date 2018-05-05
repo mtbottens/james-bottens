@@ -140,7 +140,7 @@ export const pageQuery = graphql`
             edges {
                 node {
                     id
-                    thumbnailSizes: resize(height: 300) {
+                    thumbnailSizes: resize(height: 300, cropFocus: ENTROPY) {
                         src
                         tracedSVG
                         width
